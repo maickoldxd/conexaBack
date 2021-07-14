@@ -49,7 +49,8 @@ export default (handler) => {
       const tokenDecode = jwt.verify(token,process.env.JWT)
 
       //FOR BETTER SECURITY UNCOMMENT THE NEXT LINES & THE LINES IN login.js
-      if (!tokenDecode && tokenDecode.agent != req.headers['user-agent']) {
+      /**
+       * if (!tokenDecode && tokenDecode.agent != req.headers['user-agent']) {
         return res.status(401).json({
           msg: 'Token corrupted',
         });
@@ -59,6 +60,7 @@ export default (handler) => {
           msg: 'Token corrupted',
         });
       }
+       */
       //THIS IS A GOOD PLACE TO GET USER DATA
 
       //const userData = await User.findOne({name:tokenDecode.id})

@@ -1,8 +1,15 @@
 import jwt from 'jsonwebtoken'
-import cors from '../../../utils/cors'
 export default async (req,res) => {
     try {
-        await cors(req,res)
+        if (req.method === 'OPTIONS') {
+            res.setHeader(
+              'Access-Control-Allow-Headers',
+              'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, authorization'
+            )
+            res.status(200).end()
+            return
+          }
+
         const {body:{username,password},method}= req
         if (method === 'POST') {
             if (typeof username === 'string' && username == "developer" 
