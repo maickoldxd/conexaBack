@@ -15,6 +15,7 @@
     "nextjs-cors": "^1.0.5",
     "plaiceholder": "^2.2.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "sharp": "^0.29.2"
   }
 }
